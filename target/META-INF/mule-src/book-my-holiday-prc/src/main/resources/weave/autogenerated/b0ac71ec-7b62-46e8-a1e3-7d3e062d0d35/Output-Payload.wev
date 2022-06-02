@@ -1,0 +1,4 @@
+%dw 2.0
+
+type auto_b0ac71ec_7b62_46e8_a1e3_7d3e062d0d35_Output_Payload = Array<{  rooms_available: Number,   Price: Number,   Date: String,   Place: String,   _?: Any}>
+

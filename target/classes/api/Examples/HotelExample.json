@@ -1,0 +1,14 @@
+[
+  {
+    "Date": "26-05-2022",
+    "Place": "Banglore",
+    "Price": 4500,
+    "rooms_available": 45
+  },
+  {
+    "Date": "27-05-2022",
+    "Place": "NewDelhi",
+    "Price": 4500,
+    "rooms_available": 46
+  }
+]

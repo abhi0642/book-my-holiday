@@ -1,0 +1,132 @@
+#%RAML 1.0
+title: prc-book-my-holiday
+description: Book my holiday API
+types:
+  cabDataTypes: !include Datatypes/Cab.raml
+  hotel: !include Datatypes/Hotels.raml
+uses:
+  dtypes: /Datatypes/flights.raml
+/flights: 
+  get:
+    description: get all flight details
+    queryParameters:
+      source:
+        type: string
+      destination:
+        type: string
+      date:
+        type: date-only
+      number_of_seats:
+        type: number
+    responses:
+      200:
+        body:
+          application/json:
+            type: dtypes.get-flights []
+            example: !include Examples/getFlights.json
+/book-flights:
+  description: book a flight
+  post:
+    body:
+      application/json:
+        type: dtypes.book-flight
+        example: !include Examples/bookFlight.json
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Examples/flightBooked.json
+/booking-details:
+
+  /{booking-id}:
+    get:
+      description: get booking details of a specific booking 
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /Examples/bookingResponse.json
+    delete:
+      description: cancel booking
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /Examples/cancelBookingResponse.json
+/cabs:
+  get:
+    description: Fetch all cab details
+    queryParameters:
+      source:
+        type: string
+        required: true
+        example: "Delhi"
+      destination:
+        type: string
+        required: true
+        example: "Patna"
+    responses:
+      200:
+        body:
+          application/json:
+            type: cabDataTypes
+            example: !include Examples/getAllCabDetailsExample.json
+/bookCab:
+  post:
+    description: Book cab based on required source and Destination
+    body:
+      application/json:
+        example: !include Examples/bookCabPostExample.json
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Examples/bookCabResposeExample.json
+
+/bookedCabDetails:
+  /{bookingId}:
+    get:
+      description: Fetch booked cab details
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include Examples/bookedCabDetailsExample.json
+
+/hotels:
+
+  get:
+    description: get hotel details
+    queryParameters:
+      Place:
+        enum:
+          - Banglore
+          - NewDelhi
+          - Bhopal
+      
+    responses:
+      200:
+        body:
+          application/json:
+             type: hotel[]
+             example: !include Examples/HotelExample.json
+
+/bookhotel:
+
+  get:
+    description: book hotel
+    queryParameters:
+      Place:
+        enum:
+          - Banglore
+          - NewDelhi
+          - Bhopal
+
+      rooms:
+      date:
+        required: true
+    responses:
+      201:
+        body:
+          application/json:
+            example: !include /Examples/HotelBookExample.json
