@@ -24,7 +24,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<filghts-indigo:get-flights doc:name="Get flights" doc:id="02a0046e-06ae-42bd-82f3-861611f33813" config-ref="Filghts_indigo_Config" source="#[attributes.queryParams.source]" destination="#[attributes.queryParams.destination]" date="#[attributes.queryParams.date]" number-of-seats="#[attributes.queryParams.number_of_seats]" client-id="d5fc6838f32843089f99b433a1f883ec" client-secret="C5a8EaC9cd6f43518e10Fd157a11502C"/>
 	</flow>
 	<flow name="createFlight" doc:id="147ae4a7-f09a-4c2f-8c8a-290f8f041ee5" >
-		<filghts-indigo:create-flight doc:name="Create flight" doc:id="718375ab-45e1-4eb1-b6f2-e31dc016f63a" config-ref="Filghts_indigo_Config" client-id="d5fc6838f32843089f99b433a1f883ec" client-secret="C5a8EaC9cd6f43518e10Fd157a11502C"/>
+		<filghts-indigo:create-book-flight doc:name="Create book flight" doc:id="4c7c47bb-5ad0-459c-a7a8-ed76b4b68cbc" config-ref="Filghts_indigo_Config" client-id="d5fc6838f32843089f99b433a1f883ec" client-secret="C5a8EaC9cd6f43518e10Fd157a11502C"/>
 	</flow>
 	<flow name="bookHotel" doc:id="953bfa96-afae-450b-b03f-ef549b82b547" >
 		<set-variable value="#[attributes.queryParams.Place]" doc:name="Set Variable" doc:id="d824f46e-d2c5-4399-8270-abc1003db0ea" variableName="Place"/>
