@@ -7,10 +7,10 @@ http://www.mulesoft.org/schema/mule/filghts-indigo http://www.mulesoft.org/schem
 http://www.mulesoft.org/schema/mule/cab-booking-api http://www.mulesoft.org/schema/mule/cab-booking-api/current/mule-cab-booking-api.xsd
 http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-	<filghts-indigo:config name="Filghts_indigo_Config" doc:name="Filghts-indigo Config" doc:id="40dca447-c756-4d4f-b478-876bcdda9b69" property_host="sys-indigo-flight.us-e2.cloudhub.io" property_port="80" property_protocol="HTTP" property_basePath="/api" />
-	<cab-booking-api:config name="Cab_booking_API_Config" doc:name="Cab-booking-API Config" doc:id="f26a8edf-fd03-4d36-b9e4-7da2d0e02ee0" property_host="sys-car-booking.us-e2.cloudhub.io" property_port="80" property_protocol="HTTP" property_basePath="/api" />
+	<filghts-indigo:config name="Filghts_indigo_Config" doc:name="Filghts-indigo Config" doc:id="40dca447-c756-4d4f-b478-876bcdda9b69" property_host="http://sys-flight.us-e2.cloudhub.io" property_port="80" property_protocol="HTTP" property_basePath="/api" />
+	<cab-booking-api:config name="Cab_booking_API_Config" doc:name="Cab-booking-API Config" doc:id="f26a8edf-fd03-4d36-b9e4-7da2d0e02ee0" property_host="http://sys-cab.us-e2.cloudhub.io" property_port="80" property_protocol="HTTP" property_basePath="/api" />
 	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="309fdac9-2448-4505-923f-72c11ce424ea" >
-		<wsc:connection wsdlLocation="http://sys-hotels-deployable.us-e2.cloudhub.io/hotel/default_Port?wsdl" service="hotel" port="default_Port" address="http://sys-hotels-deployable.us-e2.cloudhub.io/hotel/default_Port" >
+		<wsc:connection wsdlLocation="http://sys-hotels.us-e2.cloudhub.io/hotel/default_Port?wsdl" service="hotel" port="default_Port" address="http://sys-hotels.us-e2.cloudhub.io/hotel/default_Port" >
 			<wsc:web-service-security actor="http://schemas.xmlsoap.org/soap/actor/next" />
 		</wsc:connection>
 	</wsc:config>
